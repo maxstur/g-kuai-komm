@@ -1,0 +1,34 @@
+/*Establece un ancho margen y centrado del contenedor padre*/
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+.contenedor {
+  background-image: url('ruta-de-la-imagen.jpg'); /* Reemplaza 'ruta-de-la-imagen.jpg' con la ruta de tu imagen */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#game {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Establece un ancho fijo para cada elemento */
+.campo,
+.one {
+  width: calc(25% - 0.7rem);
+  margin: 0.7rem;
+}
+/* Características del campo de juego*/
+.kuaiKuai {
+  width: 100%;
+  height: 1rem;
+  background-color: #5dde32;
+  clip-path: ellipse(30% 40% at 50% 40%);
+  margin-top: 3rem;
+}
