@@ -1,34 +1,58 @@
-/*Establece un ancho margen y centrado del contenedor padre*/
-h1 {
+.titulo-game {
   display: flex;
   justify-content: center;
   font-size: 3rem;
+  animation: flash 1.3s infinite alternate;  
 }
-.contenedor {
-  background-image: url('ruta-de-la-imagen.jpg'); /* Reemplaza 'ruta-de-la-imagen.jpg' con la ruta de tu imagen */
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
-  background-position: center;
-  background-repeat: no-repeat;
+
+@keyframes flash {
+  0% {
+    text-shadow: 0 0 3px #f01482;
+  }
+  25% {
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    text-shadow: 0 0 0 transparent;
+  }
+  100%{
+    text-shadow: 0 0 0 transparent;
+  }
 }
+
 #game {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  animation: cambioColor 10s linear infinite;
+  height: 100vh;
 }
 
-/* Establece un ancho fijo para cada elemento */
-.campo,
-.one {
-  width: calc(25% - 0.7rem);
-  margin: 0.7rem;
+@keyframes cambioColor {
+  0% {
+    background-color:#f90d9a; /* Color de fondo inicial */
+  }
+  50% {
+    background-color: #144bff; /* Color de fondo a la mitad de la animación */
+  }
+  100% {
+    background-color: #f01482; /* Color de fondo final (vuelve al color inicial) */
+  }
+}
+
+.campo{
+  width: calc(25% 0);
+  justify-content: center;
 }
 /* Características del campo de juego*/
 .kuaiKuai {
-  width: 100%;
+  width: 9rem;
   height: 1rem;
   background-color: #5dde32;
   clip-path: ellipse(30% 40% at 50% 40%);
   margin-top: 3rem;
+  justify-content: center;
 }
