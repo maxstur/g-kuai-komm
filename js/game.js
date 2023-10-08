@@ -1,5 +1,3 @@
-
-
 const campo = document.querySelectorAll(".campo");
 const puntos = document.querySelector(".puntos");
 const kuaiKuai = document.querySelectorAll(".kuaiKuai");
@@ -20,4 +18,6 @@ function cualquierCampo(campo) {
   return campo;
 }
 
-
+function aparecer() {
+  const tiempo = cualquierTiempo(200, 1000);
+}

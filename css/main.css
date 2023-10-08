@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   font-size: 3rem;
-  animation: flash 1.3s infinite alternate;  
+  color: aliceblue;
+  animation: flash 1.3s infinite alternate;
 }
 
 @keyframes flash {
@@ -15,7 +16,32 @@
   50% {
     text-shadow: 0 0 0 transparent;
   }
-  100%{
+  100% {
+    text-shadow: 0 0 0 transparent;
+  }
+}
+
+.puntos {
+  color: aliceblue;
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  animation: a 1s infinite alternate;
+}
+
+@keyframes a {
+  0% {
+    text-shadow: 0 0 5px #5dde32;
+  }
+  25% {
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    text-shadow: 0 0 0 transparent;
+  }
+  100% {
     text-shadow: 0 0 0 transparent;
   }
 }
@@ -28,12 +54,11 @@
   justify-content: center;
   align-items: center;
   animation: cambioColor 10s linear infinite;
-  height: 100vh;
 }
 
 @keyframes cambioColor {
   0% {
-    background-color:#f90d9a; /* Color de fondo inicial */
+    background-color: #f90d9a; /* Color de fondo inicial */
   }
   50% {
     background-color: #144bff; /* Color de fondo a la mitad de la animación */
@@ -43,16 +68,29 @@
   }
 }
 
-.campo{
-  width: calc(25% 0);
-  justify-content: center;
-}
 /* Características del campo de juego*/
-.kuaiKuai {
+.campo {
   width: 9rem;
   height: 1rem;
   background-color: #5dde32;
   clip-path: ellipse(30% 40% at 50% 40%);
-  margin-top: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
   justify-content: center;
+  width: calc(25% 0);
+  justify-content: center;
+}
+
+.kuaiKuai {
+  background: url(../img/kuaiKazo-malo1.png);
+  background-size: 60%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+
+.kuaiKuai.up .campo {
+  top: 0;
 }
