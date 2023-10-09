@@ -1,54 +1,57 @@
-const campo = document.querySelectorAll(".campo");
-const puntos = document.querySelector(".puntos");
-const kuaiKuai = document.querySelectorAll(".kuaiKuai");
-let unltimoCampo;
-last timeUp = false;
+document.addEventListener("DOMContentLoaded", () => {
+  const campos = document.querySelectorAll(".campo");
+  const cuentaPuntos = document.querySelector(".puntos");
+  const kuaiS = document.querySelectorAll(".kuaiKuai");
+  let ultimoCampo;
+  let timeUp = false;
+  let puntos = 0;
+  const startGameElement = document.querySelector("#startGame");
 
-function cualquierTiempo(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
-
-function cualquierCampo(campos) {
-  const idx = Math.floor(Math.random() * campos.length);
-  const campo = campos[idx];
-  if (campo === unltimoCampo) {
-    console.log("Nunca saldrá el mismo - Never the same field");
-    return cualquierCampo(campos);
+  function cualquierTiempo(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
   }
-  unltimoCampo = campo;
-  return campos;
-}
 
-function aparecer() {
-  const tiempo = cualquierTiempo(200, 1000);
-  const campo = cualquierCampo(campos);
-  campo.classList.add("up");
-  setTimeout(() => {
-    campo.classList.remove("up");
-    if (!timeUp) aparecer();
-  }, tiempo);
-}
+  function cualquierCampo(campos) {
+    const idx = Math.floor(Math.random() * campos.length);
+    const campo = campos[idx];
+    if (campo === ultimoCampo) {
+      console.log("Nunca saldrá el mismo - Never the same field");
+      return cualquierCampo(campos);
+    }
+    ultimoCampo = campo;
+    return campo;
+  }
 
-function startButton() {
-  puntosBoard.textContent = 0;
-  timeUp = false;
-  aparecer();
-  setTimeout(() => 
-    timeUp = true, 10000
-  )
-}
+  function aparecer() {
+    const tiempo = cualquierTiempo(200, 1000);
+    const campo = cualquierCampo(campos);
+    campo.classList.add("up");
+    const kuaiKuai = campo.querySelector(".kuaiKuai");
+    kuaiKuai.classList.add("visible");
+    setTimeout(() => {
+      campo.classList.remove("up");
+      kuaiKuai.classList.remove("visible");
+      if (!timeUp) aparecer();
+    }, tiempo);
+  }
 
-function clickKuaiKuai (e) {
-  if(!e.isTrusted) return;
-  puntos++;
-  this.classList.remove("up");
-  puntosBoard.textContent = puntos;
-}
+  function startGame() {
+    puntos = 0;
+    cuentaPuntos.textContent = puntos;
+    timeUp = false;
+    aparecer();
+    setTimeout(() => (timeUp = true), 10000);
+  }
 
-kuais.forEach(kuaiKuai => kuaiKuai.addEventListener("click", clickKuaiKuai));
+  startGameElement.addEventListener("click", startGame);
 
-function clickKuaiKuai(event) {
-  const kuaiKuai = event.target;
-  const nombre = kuaiKuai.dataset.name;
-  if (nombre === "start") startGame();
-}
+  function clickKuaiKuai(e) {
+    if (!e.isTrusted) return;
+    puntos++;
+    this.classList.remove("up");
+    this.querySelector(".kuaiKuai").classList.remove("visible");
+    cuentaPuntos.textContent = puntos;
+  }
+
+  kuaiS.forEach((kuaiKuai) => kuaiKuai.addEventListener("click", clickKuaiKuai));
+});
