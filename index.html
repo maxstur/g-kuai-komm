@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Pixelify+Sans:wght@500&family=Source+Sans+3:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <link rel="stylesheet" href="./css/main.css" />
     <link
@@ -13,8 +19,13 @@
   </head>
   <body>
     <h1 class="titulo-game">Give'em a KuaiKazo!</h1>
+    <h2>
+      <a href=""><span class="store">Store</span></a>
+    </h2>
     <h2><span class="puntos">Score 0</span></h2>
+
     <section id="game">
+      <button id="startButton">Start</button>
       <div class="campo one">
         <div class="kuaiKuai"></div>
       </div>
@@ -50,13 +61,13 @@
     </main>
 
     <section id="otro-none">
-      <h1>
+      <h2>
         <span id="cantProductos">0</span>
-      </h1>
+      </h2>
       <div id="carrito"></div>
-      <h2>Total: $<span id=""></span></h2>
+      <h3>Total: $<span id=""></span></h3>
     </section>
-    <script src="./js/game.js"></script>
+    <script src="../js/game.js"></script>
     <script src="./js/kuai-com.js"></script>
   </body>
 </html>

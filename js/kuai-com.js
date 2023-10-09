@@ -69,7 +69,7 @@ function cargarProducts(productos){
     for  (const producto of products) {
         divProductos.innerHTML += `
         <div class="producto"
-            <h2>${product.name}</h2>
+            <h4>${product.name}</h4>
             <p class="precio">${product.price}</p>
             <div class="imagen">
                 <img src="img/${product.img}"/>

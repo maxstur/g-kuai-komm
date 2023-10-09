@@ -1,4 +1,19 @@
+body {
+  background-image: url(../img/img-background.png);
+  animation: movimientoFondo 10s linear infinite;
+}
+@keyframes movimientoFondo {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
 .titulo-game {
+  font-family: "Pixelify Sans", cursive;
+  opacity: 75%;
   display: flex;
   justify-content: center;
   font-size: 3rem;
@@ -22,21 +37,21 @@
 }
 
 .puntos {
-  color: aliceblue;
+  font-family: "Pixelify Sans", cursive;
+  color: #5dde32;
   position: absolute;
-  display: flex;
-  justify-content: end;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  transform: rotate(-90deg); /* Rota el texto 90 grados en sentido horario */
+  transform-origin: right bottom;
+  right: 0;
+  bottom: 9.4rem;
+  white-space: nowrap;
   animation: a 1s infinite alternate;
 }
 
 @keyframes a {
   0% {
-    text-shadow: 0 0 5px #5dde32;
-  }
-  25% {
-    text-shadow: 0 0 0 transparent;
+    text-shadow: 0 0 5px aliceblue;
   }
   50% {
     text-shadow: 0 0 0 transparent;
@@ -44,6 +59,17 @@
   100% {
     text-shadow: 0 0 0 transparent;
   }
+}
+.store {
+  font-family: "Pixelify Sans", cursive;
+  color: #ff0095;
+  text-shadow: 1px 2px 4px aliceblue;
+  position: absolute;
+  font-size: 2rem;
+  left: 0;
+  bottom: 5rem;
+  transform-origin: bottom;
+  transform: rotate(-90deg);
 }
 
 #game {
@@ -53,6 +79,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 0rem;
   animation: cambioColor 10s linear infinite;
 }
 
@@ -66,6 +93,23 @@
   100% {
     background-color: #f01482; /* Color de fondo final (vuelve al color inicial) */
   }
+}
+
+#startButton {
+  width: 5rem;
+  height: 1.5rem;
+  background-color: #5dde32;
+  color: aliceblue;
+  font-family: "Pixelify Sans", cursive;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 5.5rem;
+  right: 3.9rem;
+}
+#startButton:hover {
+  background-color: #ff0095;
+  color: #5dde32;
+  cursor: pointer;
 }
 
 /* Características del campo de juego*/
@@ -82,15 +126,15 @@
 }
 
 .kuaiKuai {
-  background: url(../img/kuaiKazo-malo1.png);
-  background-size: 60%;
+  background: url(../img/kuaiKazo-malo1.png) bottom center no-repeat;
+  background-size: 30%;
   position: absolute;
   top: 100%;
   width: 100%;
   height: 100%;
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
-.kuaiKuai.up .campo {
+.campo.up .kuaiKuai {
   top: 0;
 }
