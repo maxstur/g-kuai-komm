@@ -39,7 +39,7 @@ function startGame() {
   cuentaPuntos.textContent = puntos;
   timeUp = false;
   aparecer();
-  setTimeout(() => (timeUp = true), 10000);
+  setTimeout(() => (timeUp = true), 20000);
 }
 
 startGameElement.addEventListener("click", startGame);

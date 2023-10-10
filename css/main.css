@@ -45,7 +45,7 @@ body {
   transform: rotate(-90deg); /* Rota el texto 90 grados en sentido horario */
   transform-origin: right bottom;
   right: 0;
-  bottom: 9.4rem;
+  top: 9.4rem;
   white-space: nowrap;
   animation: a 1s infinite alternate;
 }
@@ -68,7 +68,7 @@ body {
   position: absolute;
   font-size: 2rem;
   left: 0;
-  bottom: 5rem;
+  top: 13rem;
   transform-origin: bottom;
   transform: rotate(-90deg);
 }
@@ -80,7 +80,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 0rem;
   z-index: 2;
   animation: cambioColor 10s linear infinite;
 }
@@ -116,7 +115,7 @@ body {
 
 /* Características del campo de juego*/
 .campo {
-  width: 5rem;
+  width: 10rem;
   height: 1rem;
   background-color: #5dde32;
   clip-path: ellipse(30% 40% at 50% 40%);
@@ -129,8 +128,8 @@ body {
 }
 
 .kuaiKuai {
-  background: url(../img/kuaiKazo-malo1.png);
-  background-size: 8rem;
+  background: url(../img/img_kuai-logo.png);
+  background-size: 7rem;
   position: absolute;
   top: 100%;
   width: 100%;
@@ -144,6 +143,6 @@ body {
   visibility: visible;
 }
 
-.campo.up .kuaiKuai{
+.campo.up .kuaiKuai {
   top: 0;
 }
