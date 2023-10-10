@@ -169,7 +169,7 @@ const spanTotalCarrito = document.querySelector("#totalCarrito");
 const divProductos = document.querySelector("#productos");
 const divCarrito = document.querySelector("#carrito");
 const inputBuscar = document.querySelector("#inputBuscar");
-const botonCarrito = document.querySelector("section h1");
+const botonCarrito = document.querySelector("div h3");
 const botonComprar = document.querySelector("#botonComprar");
 
 // Instaciamos la clase Carrito
@@ -234,7 +234,7 @@ inputBuscar.addEventListener("input", (event) => {
 
 // Toggle para ocultar/mostrar el carrito
 botonCarrito.addEventListener("click", (event) => {
-  document.querySelector("section").classList.toggle("ocultar");
+  document.querySelector("div").classList.toggle("ocultar");
 });
 
 // Botón comprar
