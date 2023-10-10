@@ -17,7 +17,7 @@ body {
   }
 }
 
-.titulo-game {
+#titulo-game {
   font-family: "Pixelify Sans", cursive;
   opacity: 75%;
   display: flex;
@@ -51,7 +51,7 @@ body {
   transform: rotate(-90deg); /* Rota el texto 90 grados en sentido horario */
   transform-origin: right bottom;
   right: 0;
-  top: 7.5rem;
+  top: 6rem;
   white-space: nowrap;
   animation: a 1s infinite alternate;
 }
@@ -79,10 +79,21 @@ body {
   transform-origin: bottom;
   transform: rotate(-90deg);
 }
-
+.play {
+  font-family: "Pixelify Sans", cursive;
+  color: #5dde32;
+  text-shadow: 1px 2px 4px aliceblue;
+  position: absolute;
+  font-size: 2rem;
+  top: 31rem;
+  margin: 0.3rem;
+  transform-origin: bottom;
+  transform: rotate(-90deg);
+}
 #game {
   width: 75%;
   margin: 0 auto;
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -113,6 +124,7 @@ body {
   position: absolute;
   top: 3.7rem;
   right: 3.9rem;
+  border-radius: 0.3rem;
 }
 #startGame:hover {
   background-color: #ff0095;
@@ -122,23 +134,44 @@ body {
 
 /* Características del campo de juego*/
 .campo {
-  width: 10rem;
-  height: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: end;
   background-color: #5dde32;
-  clip-path: ellipse(30% 40% at 50% 40%);
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  justify-content: center;
+  border-radius: 0.3rem;
+  border: 1px solid black;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  transition: all 0.4s;
   z-index: 1;
-  width: calc(25% 0);
-  justify-content: center;
+  width: calc(25% - 20px); /* Calcula el ancho del campo de juego en función del ancho */
 }
 
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine,
+.ten {
+  width: 5rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+/* Acá está el malo que hay que eliminar*/
 .kuaiKuai {
-  background: url(../img/img_kuai-logo.png);
-  background-size: 7rem;
+  background: url(../img/kuaiKazo-malo1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 4rem;
   position: absolute;
-  top: 100%;
+  top: 10%;
   width: 100%;
   height: 100%;
   transition: all 0.4s;
@@ -159,24 +192,25 @@ body {
 main {
   width: 60%;
   margin: auto;
-  padding: 20px 0 0 0;
+  margin-top: 1rem;
+  padding: 0.3rem 0 0 0;
 }
 main input {
   width: 100%;
   padding: 12px;
-  font-size: 34px;
-  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  box-shadow: 0px 0px 14px 0px rgb(240, 12, 12);
   border-radius: 10px;
   border: 1px solid black;
   font-weight: 100;
   margin-bottom: 20px;
 }
-.sectorCarrito {
+section.sectorCarrito {
   position: fixed;
-  box-shadow: -6px -2px 25px -13px rgba(0, 0, 0, 0.15);
-  width: 340px;
+  box-shadow: -6px -2px 25px -13px rgb(48, 113, 160);
+  width: 6rem;
   height: 100%;
-  top: 0;
+  top: 30rem;
   right: 0;
   padding: 30px;
   transition: all 0.2s;
@@ -193,13 +227,13 @@ section h1 {
   cursor: pointer;
   color: white;
   box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
-  background: url("../img/carrito.png") no-repeat #244ced;
+  background: url("../img/carrito.png") no-repeat #144bff;
   background-size: 60%;
   background-position: 9px center;
 }
 section h1 span {
   display: block;
-  background-color: #d15280;
+  background-color: #ff0095;
   border-radius: 150px;
   padding: 5px;
   width: 30px;
@@ -212,11 +246,15 @@ section h3 {
   text-align: center;
   font-size: 30px;
 }
+a.boton{
+  width: 100%; 
+  text-align: center
+}
 .btnAgregar,
 .btnQuitar,
 .boton {
   color: white;
-  background-color: #244ced;
+  background-color: #144bff;
   text-decoration: none;
   display: inline-block;
   padding: 10px;
@@ -271,11 +309,11 @@ section h3 {
 .producto .imagen {
   display: flex;
   justify-content: center;
-  min-height: 100px;
+  min-height: 5rem;
   margin: 20px 0;
 }
 .producto .imagen img {
-  max-height: 100px;
+  max-height: 6rem;
 }
 .producto .btnAgregar,
 .producto .boton {
@@ -284,11 +322,11 @@ section h3 {
   text-align: center;
 }
 .producto:hover {
-  border: 1px solid black;
+  border: 1px solid #ffc800;
   box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
 }
 #scroll {
   max-height: 96%;
   overflow-y: auto;
-  padding-left: 5px;
+  padding-left: 1rem;
 }
