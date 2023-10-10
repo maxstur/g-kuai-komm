@@ -48,7 +48,6 @@ function clickKuaiKuai(e) {
   if (!e.isTrusted) return;
   puntos++;
   this.classList.remove("up");
-
   cuentaPuntos.textContent = puntos;
 }
 
