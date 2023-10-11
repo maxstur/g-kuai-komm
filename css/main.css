@@ -134,7 +134,7 @@ body {
   font-size: 0.8rem;
   position: absolute;
   top: 3.7rem;
-  right: 3.9rem;
+  right: 9rem;
   border-radius: 0.3rem;
 }
 #startGame:hover {
@@ -186,7 +186,7 @@ body {
   width: 100%;
   height: 100%;
   transition: all 0.4s;
-  z-index: 99;
+  z-index: 2;
   visibility: hidden;
 }
 
@@ -203,34 +203,38 @@ body {
 main {
   width: 60%;
   margin: auto;
-  margin-top: 1rem;
+  margin-top: 20rem;
   padding: 0.3rem 0 0 0;
 }
 main input {
+  font-family: "Pixelify Sans", cursive;
   width: 100%;
   padding: 12px;
   font-size: 1rem;
+  color: aliceblue;
+  opacity: 70%;
   box-shadow: 0px 0px 14px 0px rgb(240, 12, 12);
   border-radius: 10px;
   border: 1px solid black;
   font-weight: 100;
   margin-bottom: 20px;
 }
-.sectorCarrito {
+aside {
   position: fixed;
   box-shadow: -6px -2px 25px -13px rgb(48, 113, 160);
-  width: 6rem;
+  width: 340px;
   height: 100%;
-  top: 30rem;
+  top: 0;
   right: 0;
   padding: 30px;
   transition: all 0.2s;
   background-color: white;
+  z-index: 3;
 }
-div h3 {
+aside h3 {
   position: absolute;
-  top: -11rem;
-  right: 1.5rem;
+  top: 20px;
+  right: 400px;
   display: block;
   width: 50px;
   height: 50px;
@@ -242,7 +246,7 @@ div h3 {
   background-size: 60%;
   background-position: 9px center;
 }
-.kuaiProductos {
+aside h3 span {
   display: block;
   background-color: #ff0095;
   border-radius: 150px;
@@ -252,19 +256,16 @@ div h3 {
   font-size: 14px;
   margin: -10px 0 0 30px;
 }
-.sectorCarrito h3 {
+aside h4 {
   padding-top: 10px;
   text-align: center;
   font-size: 30px;
 }
-a.boton{
-  width: 100%; 
-  text-align: center
-}
 .btnAgregar,
 .btnQuitar,
 .boton {
-  color: white;
+  font-family: "Pixelify Sans", cursive;
+  color: aliceblue;
   background-color: #144bff;
   text-decoration: none;
   display: inline-block;
@@ -320,11 +321,11 @@ a.boton{
 .producto .imagen {
   display: flex;
   justify-content: center;
-  min-height: 5rem;
+  min-height: 100px;
   margin: 20px 0;
 }
 .producto .imagen img {
-  max-height: 6rem;
+  max-height: 100px;
 }
 .producto .btnAgregar,
 .producto .boton {
@@ -333,15 +334,14 @@ a.boton{
   text-align: center;
 }
 .producto:hover {
-  border: 0.3rem solid #244ced;
+  border: 1px solid black;
   box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
 }
 #scroll {
   max-height: 96%;
   overflow-y: auto;
-  padding-left: 1rem;
+  padding-left: 5px;
 }
-
 .footer {
   font-family: "Pixelify Sans", cursive;
   font-size: 0.8rem;
@@ -349,7 +349,7 @@ a.boton{
   margin-top: 1rem;
   margin-bottom: 0rem;
   width: 100%;
-  height: 4rem;
+  height: 3rem;
   background-color: #132d80;
   color: white;
   display: flex;

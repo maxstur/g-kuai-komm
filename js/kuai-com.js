@@ -1,13 +1,3 @@
-/*
- Objetivos para la tercer pre-entrega:
- - Usar el DOM ✅
- - Usar eventos ✅
- - Usar storage ✅
- - MODO PRO: Simular una base de datos o API ✅
- - MODO DIOS: Buscador ✅
-*/
-
-// Clase "molde" para los productos de nuestra aplicación
 class Producto {
   constructor(id, nombre, precio, categoria, imagen) {
     this.id = id;
@@ -28,9 +18,9 @@ class BaseDeDatos {
     this.agregarRegistro(1, "Espada", 8000, "Empowerment", "kuaiKazo-bueno1.png");
     this.agregarRegistro(2, "Escudo", 5000, "Empowerment", "escudo.png");
     this.agregarRegistro(3, "Estrella", 1000, "Empowerment", "estrella.png");
-    this.agregarRegistro(4, "Gemas", 2000, "Empowerment", "gema-vida.webp");
-    this.agregarRegistro(5, "Chacos", 5500, "Empowerment", "nunchacu.png");
-    this.agregarRegistro(5, "Sombrero de Poder", 5500, "Empowerment", "sombreroDePoder.jpg");
+    this.agregarRegistro(4, "Ge Kuai", 2000, "Empowerment", "gema-vida.webp");
+    this.agregarRegistro(5, "Nunchakus", 5500, "Empowerment", "nunchacu.png");
+    this.agregarRegistro(6, "PowerHat", 8500, "Empowerment", "sombreroDePoder.jpg");
   }
 
   // Método que crea el objeto producto y lo almacena en el catálogo (array)
@@ -129,13 +119,13 @@ class Carrito {
     // Recorro producto por producto del carrito, y los dibujo en el HTML
     for (const producto of this.carrito) {
       divCarrito.innerHTML += `
-          <div class="productoCarrito">
-            <h2>${producto.nombre}</h2>
-            <p>$${producto.precio}</p>
-            <p>Cantidad: ${producto.cantidad}</p>
-            <a href="#" class="btnQuitar" data-id="${producto.id}">Quitar del carrito</a>
-          </div>
-        `;
+        <div class="productoCarrito">
+          <h2>${producto.nombre}</h2>
+          <p>$${producto.precio}</p>
+          <p>Cantidad: ${producto.cantidad}</p>
+          <a href="#" class="btnQuitar" data-id="${producto.id}">Quitar del carrito</a>
+        </div>
+      `;
       // Actualizamos los totales
       this.total += producto.precio * producto.cantidad;
       this.cantidadProductos += producto.cantidad;
@@ -169,7 +159,7 @@ const spanTotalCarrito = document.querySelector("#totalCarrito");
 const divProductos = document.querySelector("#productos");
 const divCarrito = document.querySelector("#carrito");
 const inputBuscar = document.querySelector("#inputBuscar");
-const botonCarrito = document.querySelector("div h3");
+const botonCarrito = document.querySelector("aside h3");
 const botonComprar = document.querySelector("#botonComprar");
 
 // Instaciamos la clase Carrito
@@ -185,15 +175,15 @@ function cargarProductos(productos) {
   // Recorremos producto por producto y lo dibujamos en el HTML
   for (const producto of productos) {
     divProductos.innerHTML += `
-        <div class="producto">
-          <h2>${producto.nombre}</h2>
-          <p class="precio">$${producto.precio}</p>
-          <div class="imagen">
-            <img src="img/${producto.imagen}" />
-          </div>
-          <a href="#" class="btnAgregar" data-id="${producto.id}">Agregar al carrito</a>
+      <div class="producto">
+        <h2>${producto.nombre}</h2>
+        <p class="precio">$${producto.precio}</p>
+        <div class="imagen">
+          <img src="img/${producto.imagen}" />
         </div>
-      `;
+        <a href="#" class="btnAgregar" data-id="${producto.id}">Agregar al carrito</a>
+      </div>
+    `;
   }
 
   // Lista dinámica con todos los botones que haya en nuestro catálogo
@@ -234,7 +224,7 @@ inputBuscar.addEventListener("input", (event) => {
 
 // Toggle para ocultar/mostrar el carrito
 botonCarrito.addEventListener("click", (event) => {
-  document.querySelector("div").classList.toggle("ocultar");
+  document.querySelector("aside").classList.toggle("ocultar");
 });
 
 // Botón comprar
