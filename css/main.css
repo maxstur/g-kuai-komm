@@ -345,7 +345,7 @@ a.boton{
 .footer {
   font-family: "Pixelify Sans", cursive;
   font-size: 0.8rem;
-  position: relative;
+  clear: both;
   margin-top: 1rem;
   margin-bottom: 0rem;
   width: 100%;
