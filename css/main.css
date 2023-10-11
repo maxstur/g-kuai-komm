@@ -112,15 +112,13 @@ body {
     box-shadow: -3px 0 2px aliceblue;
   }
   50% {
-    
     background-color: #144bff;
     box-shadow: 0 1px 3px aliceblue;
   }
   75% {
-    
   }
   100% {
-    background-color: #f01482; 
+    background-color: #f01482;
     box-shadow: 1px 0 4px aliceblue;
   }
 }
@@ -156,7 +154,9 @@ body {
   margin-bottom: 0.6rem;
   transition: all 0.4s;
   z-index: 1;
-  width: calc(25% - 20px); /* Calcula el ancho del campo de juego en función del ancho */
+  width: calc(
+    25% - 20px
+  ); /* Calcula el ancho del campo de juego en función del ancho */
 }
 
 .one,
@@ -233,8 +233,8 @@ aside {
 }
 aside h3 {
   position: absolute;
-  top: 20px;
-  right: 400px;
+  top: 2rem;
+  right: 24rem;
   display: block;
   width: 50px;
   height: 50px;
@@ -305,8 +305,28 @@ aside h4 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   padding: 10px;
-  background-color: white;
+  animation: rainbow 20s linear infinite;
   text-align: center;
+}
+@keyframes rainbow {
+  0% {
+    background-image: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00);
+  }
+  20% {
+    background-image: linear-gradient(45deg, #ffff00, #00ff00, #0000ff);
+  }
+  40% {
+    background-image: linear-gradient(45deg, #0000ff, #8b00ff, #ff0000);
+  }
+  60% {
+    background-image: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00);
+  }
+  80% {
+    background-image: linear-gradient(45deg, #ffff00, #00ff00, #0000ff);
+  }
+  100% {
+    background-image: linear-gradient(45deg, #0000ff, #8b00ff, #ff0000);
+  }
 }
 .producto .precio {
   padding: 10px 0;
@@ -356,9 +376,67 @@ aside h4 {
   justify-content: center;
   align-items: center;
 }
-.link{
+.link {
   font-family: "Pixelify Sans", cursive;
   font-size: 0.8rem;
   text-decoration: none;
   color: white;
+}
+
+@media screen and (max-width: 445px) {
+  #titulo-game {
+    font-size: 2rem;
+  }
+  #startGame {
+    top: 2.3rem;
+    left: 3.5rem;
+  }
+  main {
+    margin-top: 3rem;
+  }
+  aside h3 {
+    top: 27rem;
+    right: 23rem;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-position: 7px center;
+  }
+  aside h3 span {
+    width: 25px;
+  }
+  #productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {  
+  #startGame {
+    top: 3.5rem;
+    right: 5rem;
+  }
+  main {
+    margin-top: 3rem;
+  }
+  aside h3 {
+    top: 22rem;
+    right: 23rem;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-position: 7px center;
+  }
+  #productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    height: auto;
+  }
 }
