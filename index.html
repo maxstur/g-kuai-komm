@@ -21,6 +21,7 @@
       href="img/img_kuai-logo.png"
       type="image/x-icon"
     />
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </head>
   <body>
     <h1 id="titulo-game">Give'em a KuaiKazo!</h1>
@@ -65,9 +66,15 @@
       </div>
     </section>
 
+    
     <!-- Productos -->
     <main>
-      <input id="inputBuscar" type="text" placeholder="Buscar productos..." />
+      <input
+        class="colorBuscador"
+        id="inputBuscar"
+        type="text"
+        placeholder="Buscar productos..."
+      />
       <div id="productos">
         <!-- Acá van a ir todos los productos cargados en la base de datos (catálogo) -->
       </div>
@@ -93,18 +100,38 @@
     </aside>
 
     <footer>
-      <div class="footer">
-        <p>
-          <=== © 2023 - Todos los derechos reservados
-          <a class="link" href="www.rods-designs.com">Rod'S Designs ®</a> ===>
-        </p>
-      </div>
+      <ul class="footer">
+        <li class="link">
+          By
+          <a class="link" href="https://www.rods-designs.com"
+            >Rod'S <br />
+            Designs ®</a
+          >
+        </li>
+        <li><=== © 2023 - Todos los derechos reservados Kuai Kuai®===></li>
+        <li class="img-footer">
+          <a href="https://www.facebook.com/KUAIKUAInet"
+            ><img
+              class="img-redes"
+              src="./img/fb-logo.png"
+              alt="Logo de Facebook"
+            />
+          </a>
+          <a href="https://www.instagram.com/kuaikuainet/"
+            ><img
+              class="img-redes"
+              src="./img/ig-logo.png"
+              alt="Logo de Instagram"
+          /></a>
+        </li>
+      </ul>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
+
     <script src="./js/game.js"></script>
     <script src="./js/kuai-com.js"></script>
   </body>

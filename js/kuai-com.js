@@ -14,13 +14,14 @@ class BaseDeDatos {
   constructor() {
     // Array para el catálogo
     this.productos = [];
-    // Empezar a cargar productos
-    this.agregarRegistro(1, "Espada", 8000, "Empowerment", "kuaiKazo-bueno1.png");
-    this.agregarRegistro(2, "Escudo", 5000, "Empowerment", "escudo.png");
-    this.agregarRegistro(3, "Estrella", 1000, "Empowerment", "estrella.png");
-    this.agregarRegistro(4, "Ge Kuai", 2000, "Empowerment", "gema-vida.webp");
-    this.agregarRegistro(5, "Nunchakus", 5500, "Empowerment", "nunchacu.png");
-    this.agregarRegistro(6, "PowerHat", 8500, "Empowerment", "sombreroDePoder.jpg");
+    this.cargarJson();
+  }
+
+  // Método para cargar un producto
+  async cargarJson() {
+    const resultado = await fetch("./json/productos.json");
+    this.productos = await resultado.json();
+    cargarProductos(this.productos);
   }
 
   // Método que crea el objeto producto y lo almacena en el catálogo (array)
@@ -70,7 +71,7 @@ class Carrito {
   // Agregar al carrito
   agregar(producto) {
     const productoEnCarrito = this.estaEnCarrito(producto);
-    // Si no está en el carrito, le mando eun push y le agrego
+    // Si no está en el carrito, le mando un push y le agrego
     // la propiedad "cantidad"
     if (!productoEnCarrito) {
       this.carrito.push({ ...producto, cantidad: 1 });
@@ -130,6 +131,14 @@ class Carrito {
       this.total += producto.precio * producto.cantidad;
       this.cantidadProductos += producto.cantidad;
     }
+    if (this.cantidadProductos > 0) {
+      //Boton comprar disponible si hay productos en el carrito
+      botonComprar.style.display = "block";
+    } else {
+      // Botón modificado
+      botonComprar.style.display = "none";
+    }
+
     // Como no se cuantos productos tengo en el carrito, debo
     // asignarle los eventos de forma dinámica a cada uno
     // Primero hago una lista de todos los botones con .querySelectorAll
