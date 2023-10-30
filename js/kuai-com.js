@@ -47,6 +47,9 @@ class BaseDeDatos {
       producto.nombre.toLowerCase().includes(palabra.toLowerCase())
     );
   }
+  registroPorCategoria(categoria) {
+    return this.productos.filter((producto) => producto.categoria === categoria);
+  }
 }
 
 // Clase carrito que nos sirve para manipular los productos de nuestro carrito
@@ -170,7 +173,23 @@ const divCarrito = document.querySelector("#carrito");
 const inputBuscar = document.querySelector("#inputBuscar");
 const botonCarrito = document.querySelector("aside h3");
 const botonComprar = document.querySelector("#botonComprar");
+const botonesCategorias = document.querySelectorAll(".btnCategoria");
 
+botonesCategorias.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const categoria = boton.dataset.categoria;
+    // Eliminar .seleccionado
+    const botonSeleccionado = document.querySelector(".seleccionado");
+    botonSeleccionado.classList.remove("seleccionado");
+    // Agrego .seleccionado
+    boton.classList.add("seleccionado");
+    if (categoria == "todos") {
+      cargarProductos(bd.traerRegistros());
+    } else {
+      cargarProductos(bd.registroPorCategoria(categoria));
+    }
+  })
+})
 // Instaciamos la clase Carrito
 const carrito = new Carrito();
 

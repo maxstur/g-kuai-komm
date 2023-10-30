@@ -271,12 +271,17 @@ aside h4 {
   margin: 10px 0;
   border: 1px solid #244ced;
   transition: all 0.2s;
+  cursor: pointer;
 }
 .btnAgregar:hover,
 .btnQuitar:hover,
 .boton:hover {
   border: 1px solid white;
   scale: 1.05;
+}
+.boton.seleccionado {
+  border: 4px solid #244ced;
+  background-color: #ff0095;
 }
 .productoCarrito {
   border-bottom: 2px dashed rgb(48, 113, 160);

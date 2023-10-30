@@ -1,47 +1,44 @@
 [
-    {
-        "id": 1,
-        "nombre": "Espada",
-        "precio": 8000,
-        "categoria": "Empowerment",
-        "imagen": "kuaiKazo-bueno1.png"
-    },
-    {
-        "id": 2,
-        "nombre": "Escudo",
-        "precio": 5000, 
-        "categoria": "Empowerment",
-        "imagen": "escudo.png"
-    },
-    {
-        "id": 3,
-        "nombre": "Estrella",
-        "precio": 1000, 
-        "categoria": "Empowerment", 
-        "imagen": "estrella.png"
-    },
-    {
-        "id": 4,
-        "nombre": "Ge Kuai", 
-        "precio": 2000,
-        "categoria": "Empowerment", 
-        "imagen": "gema-vida.webp"
-    },
-    {
-        "id": 5,
-        "nombre": "Nunchakus", 
-        "precio": 5500, 
-        "categoria": "Empowerment", 
-        "imagen": "nunchacu.png"
-    },
-    {
-        "id": 6, 
-        "nombre": "PowerHat", 
-        "precio": 8500, 
-        "categoria": "Empowerment", 
-        "imagen": "sombreroDePoder.jpg"
-    }
+  {
+    "id": 1,
+    "nombre": "Espada",
+    "precio": 8000,
+    "categoria": "espadas",
+    "imagen": "kuaiKazo-bueno1.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Escudo",
+    "precio": 5000,
+    "categoria": "escudos",
+    "imagen": "escudo.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Estrella",
+    "precio": 1000,
+    "categoria": "estrellas",
+    "imagen": "estrella.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Ge Kuai",
+    "precio": 2000,
+    "categoria": "geKuais",
+    "imagen": "gema-vida.webp"
+  },
+  {
+    "id": 5,
+    "nombre": "Nunchakus",
+    "precio": 5500,
+    "categoria": "nunchakus",
+    "imagen": "nunchacu.png"
+  },
+  {
+    "id": 6,
+    "nombre": "PowerHat",
+    "precio": 8500,
+    "categoria": "powerHats",
+    "imagen": "sombreroDePoder.jpg"
+  }
 ]
-    
-    
-   
